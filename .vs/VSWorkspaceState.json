@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\controller",
-    "\\model",
-    "\\routes"
+    "\\src"
   ],
-  "SelectedNode": "\\routes\\verifytoken.js",
+  "SelectedNode": "\\src\\Services.js",
   "PreviewInSolutionExplorer": false
 }
