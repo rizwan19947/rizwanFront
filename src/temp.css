@@ -1,0 +1,35 @@
+.temp {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+}
+.leftbox {
+    float: left;
+    background: Red;
+    width: 25%;
+    height: 280px;
+    padding: 10px;
+}
+
+.middlebox {
+    float: left;
+    background: Green;
+    width: 50%;
+    height: 280px;
+    padding: 10px;
+}
+
+.rightbox {
+    float: right;
+    background: blue;
+    width: 25%;
+    height: 280px;
+    padding: 10px;
+}
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+}
