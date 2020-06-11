@@ -8,6 +8,7 @@ import { Redirect } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import shadows from "@material-ui/core/styles/shadows";
 import color from "@material-ui/core/colors/teal";
+import { stringify } from "querystring";
 const Cookie = new Cookies();
 
 
@@ -95,7 +96,7 @@ export default class Schedule extends React.Component {
         this.onChangeclasses = this.onChangeclasses.bind(this);
         this.onChangenoOfSeats = this.onChangenoOfSeats.bind(this);
         this.onChangeprice = this.onChangeprice.bind(this);
-        this.submit = this.submit.bind(this);
+        this.trainsubmithandler = this.trainsubmithandler.bind(this);
     }
     onChangetrainNo(e) {
         this.setState({ trainNo: e.target.value });
@@ -139,8 +140,32 @@ export default class Schedule extends React.Component {
     onChangeprice(e) {
         this.setState({ price: e.target.value });
     }
-    submit(e) {
+    /*
+       submit(e) {
+            e.preventDefault();
+            const obj = {
+                trainNo: this.state.trainNo,
+                station: this.state.station,
+                TrainName: this.state.TrainName,
+                departureDate: this.state.departureDate,
+                arrivalDate: this.state.arrivalDate,
+                departureTime: this.state.departureTime,
+                duration: this.state.duration,
+                origin: this.state.origin,
+                destination: this.state.destination,
+                classes: this.state.classes,
+                noOfSeats: this.state.noOfSeats,
+                price: this.state.price,
+    
+            }
+            axios.post('http://localhost:4000/api/train/newtrain', obj).then(res => { this.setState({ redirect: true }) });
+        }
+    */
+
+
+    trainsubmithandler(e) {
         e.preventDefault();
+        console.log("KUCH BHI");
         const obj = {
             trainNo: this.state.trainNo,
             station: this.state.station,
@@ -148,6 +173,7 @@ export default class Schedule extends React.Component {
             departureDate: this.state.departureDate,
             arrivalDate: this.state.arrivalDate,
             departureTime: this.state.departureTime,
+            arrivalTime: this.state.arrivalTime,
             duration: this.state.duration,
             origin: this.state.origin,
             destination: this.state.destination,
@@ -156,7 +182,13 @@ export default class Schedule extends React.Component {
             price: this.state.price,
 
         }
-        axios.post('http://localhost:4000/api/train/newtrain', obj).then(res => { this.setState({ redirect: true }) });
+        console.log(JSON.stringify(obj) + "ITS WORKINGGGG!!");
+        fetch('http://localhost:4000/api/train/newtrain', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
     }
 
 
@@ -327,11 +359,13 @@ export default class Schedule extends React.Component {
                                         <div className="text-center py-4 mt-3">
 
 
-                                            <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
+                                            <MDBBtn color="cyan" type="submit" onClick={this.trainsubmithandler} style={stylecolor}>
                                                 submit
                    </MDBBtn>{/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
+
+
 
                                         </div>
                                     </form>
@@ -498,9 +532,9 @@ export default class Schedule extends React.Component {
                                         <div className="text-center py-4 mt-3">
 
 
-                                            <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
+                                            {/*                                        <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
                                                 submit
-                   </MDBBtn>{/*<div>  
+                </MDBBtn>              */}              {/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
 
@@ -670,9 +704,10 @@ export default class Schedule extends React.Component {
                                         <div className="text-center py-4 mt-3">
 
 
-                                            <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
+                                            {/*                             <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
                                                 submit
-                   </MDBBtn>{/*<div>  
+                   </MDBBtn>
+                 */}  {/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
 

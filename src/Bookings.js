@@ -78,7 +78,7 @@ class Bookings extends React.Component {
             <thead>
               <tr>
                 <th>Flight No</th>
-                 <th>Airline</th>
+                <th>Airline</th>
                 <th>Departure Date</th>
                 <th>Arrival Date</th>
                 <th>Origin</th>
