@@ -11,7 +11,6 @@ import color from "@material-ui/core/colors/teal";
 import { stringify } from "querystring";
 const Cookie = new Cookies();
 
-
 const style = {
     height: '1380px',
     width: '500px',
@@ -67,6 +66,9 @@ export default class Schedule extends React.Component {
     constructor(props) {
 
         super(props);
+
+
+
         this.state = {
             trainNo: '',
             station: '',
@@ -81,8 +83,103 @@ export default class Schedule extends React.Component {
             classes: '',
             noOfSeats: '',
             price: '',
+            flightNo: '',
+            airport: '',
+            flightName: '',
+            flightDeparture: '',
+            flightArrival: '',
+            flightDepartTime: '',
+            flightArriveTime: '',
+            flightDuration: '',
+            flightOrigin: '',
+            flightDestination: '',
+            flightClass: '',
+            flightSeats: '',
+            flightPrice: '',
+            busNo: '',
+            busStation: '',
+            busName: '',
+            busDeparture: '',
+            busArrival: '',
+            departTime: '',
+            arriveTime: '',
+            busDuration: '',
+            busOrigin: '',
+            busDestination: '',
+            busClass: '',
+            busSeats: '',
+            busPrice: '',
             redirerct: false
-        }
+
+
+
+
+            /*this.state = {
+    
+                train: [
+                    {
+    
+                    trainNo: '',
+                    station: '',
+                    TrainName: '',
+                    departureDate: '',
+                    arrivalDate: '',
+                    departureTime: '',
+                    arrivalTime: '',
+                    duration: '',
+                    origin: '',
+                    destination: '',
+                    classes: '',
+                    noOfSeats: '',
+                    price: '',
+                    redirerct: false
+                    }]
+                    */
+
+
+
+        };
+
+
+        /*this.state =
+        {
+            flightNo: '',
+            airport: '',
+            flightName: '',
+            flightDeparture: '',
+            flightArrival: '',
+            flightDepartTime: '',
+            flightArriveTime: '',
+            flightDuration: '',
+            flightOrigin: '',
+            flightDestination: '',
+            flightClass: '',
+            flightSeats: '',
+            flightPrice: '',
+            redirerct: false
+
+        };
+
+        this.state =
+        {
+            busNo: '',
+            busStation: '',
+            busName: '',
+            busDeparture: '',
+            busArrival: '',
+            departTime: '',
+            arriveTime: '',
+            busDuration: '',
+            busOrigin: '',
+            busDestination: '',
+            busClass: '',
+            busSeats: '',
+            busPrice: '',
+            redirerct: false
+
+        };*/
+
+        //TRAIN
         this.onChangetrainNo = this.onChangetrainNo.bind(this);
         this.onChangestation = this.onChangestation.bind(this);
         this.onChangeTrainName = this.onChangeTrainName.bind(this);
@@ -97,6 +194,47 @@ export default class Schedule extends React.Component {
         this.onChangenoOfSeats = this.onChangenoOfSeats.bind(this);
         this.onChangeprice = this.onChangeprice.bind(this);
         this.trainsubmithandler = this.trainsubmithandler.bind(this);
+
+        //FLIGHT
+        /*this.onChangeflightNo = this.onChangeflightNo.bind(this);
+        this.onChangeairport = this.onChangeairport.bind(this);
+        this.onChangeflightName = this.onChangeflightName.bind(this);
+        this.onChangeflightDeparture = this.onChangeflightDeparture.bind(this);
+        this.onChangeflightArrival = this.onChangeflightArrival.bind(this);
+        this.onChangeflightDepartTime = this.onChangeflightDepartTime.bind(this);
+        this.onChangeflightArriveTime = this.onChangeflightArriveTime.bind(this);
+        this.onChangeflightDuration = this.onChangeflightDuration.bind(this);
+        this.onChangeflightOrigin = this.onChangeflightOrigin.bind(this);
+        this.onChangeflightDestination = this.onChangeflightDestination.bind(this);
+        this.onChangeflightClass = this.onChangeflightClass.bind(this);
+        this.onChangeflightSeats = this.onChangeflightSeats.bind(this);
+        this.onChangeflightPrice = this.onChangeflightPrice.bind(this);
+
+
+        //BUS
+        this.onChangebusNo = this.onChangebusNo.bind(this);
+        this.onChangebusStation = this.onChangebusStation.bind(this);
+        this.onChangebusName = this.onChangebusName.bind(this);
+        this.onChangebusDeparture = this.onChangebusDeparture.bind(this);
+        this.onChangebusArrival = this.onChangebusArrival.bind(this);
+        this.onChangedepartTime = this.onChangedepartTime.bind(this);
+        this.onChangearriveTime = this.onChangearriveTime.bind(this);
+        this.onChangebusDuration = this.onChangebusDuration.bind(this);
+        this.onChangebusOrigin = this.onChangebusOrigin.bind(this);
+        this.onChangebusDestination = this.onChangebusDestination.bind(this);
+        this.onChangebusClass = this.onChangebusClass.bind(this);
+        this.onChangebusSeats = this.onChangebusSeats.bind(this);
+        this.onChangebusPrice = this.onChangebusPrice.bind(this);*/
+
+
+
+
+
+        //THIS WORKS///
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     }
     onChangetrainNo(e) {
         this.setState({ trainNo: e.target.value });
@@ -140,6 +278,112 @@ export default class Schedule extends React.Component {
     onChangeprice(e) {
         this.setState({ price: e.target.value });
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+    /*onChangeflightNo(e) {
+
+        this.setState({ flightNo: e.target.value });
+    }
+    onChangeairport(e) {
+        this.setState({ airport: e.target.value });
+    }
+    onChangeflightName(e) {
+        this.setState({ flightName: e.target.value });
+    }
+    onChangeflightDeparture(e) {
+        this.setState({ flightDeparture: e.target.value });
+    }
+    onChangeflightArrival(e) {
+        this.setState({ flightArrival: e.target.value });
+    }
+
+    onChangeflightDepartTime(e) {
+        this.setState({ flightDepartTime: e.target.value });
+    }
+    onChangeflightArriveTime(e) {
+        this.setState({ flightArriveTime: e.target.value });
+    }
+    onChangeflightDuration(e) {
+        this.setState({ flightDuration: e.target.value });
+    }
+    onChangeflightOrigin(e) {
+        this.setState({ flightOrigin: e.target.value });
+    }
+
+    onChangeflightDestination(e) {
+        this.setState({ flightDestination: e.target.value });
+    }
+    onChangeflightClass(e) {
+        this.setState({ flightClass: e.target.value });
+    }
+    onChangeflightSeats(e) {
+        this.setState({ flightSeats: e.target.value });
+    }
+
+    onChangeflightPrice(e) {
+        this.setState({ flightPrice: e.target.value });
+    }
+
+
+
+
+
+
+
+    onChangebusNo(e) {
+        this.setState({ busNo: e.target.value });
+    }
+    onChangebusStation(e) {
+        this.setState({ busStation: e.target.value });
+    }
+    onChangebusName(e) {
+        this.setState({ busName: e.target.value });
+    }
+    onChangebusDeparture(e) {
+        this.setState({ busDeparture: e.target.value });
+    }
+    onChangebusArrival(e) {
+        this.setState({ busArrival: e.target.value });
+    }
+
+    onChangedepartTime(e) {
+        this.setState({ departTime: e.target.value });
+    }
+    onChangearriveTime(e) {
+        this.setState({ arriveTime: e.target.value });
+    }
+    onChangebusDuration(e) {
+        this.setState({ busDuration: e.target.value });
+    }
+    onChangebusOrigin(e) {
+        this.setState({ busOrigin: e.target.value });
+    }
+
+    onChangebusDestination(e) {
+        this.setState({ busDestination: e.target.value });
+    }
+    onChangebusClass(e) {
+        this.setState({ busClass: e.target.value });
+    }
+    onChangebusSeats(e) {
+        this.setState({ busSeats: e.target.value });
+    }
+
+    onChangebusPrice(e) {
+        this.setState({ busPrice: e.target.value });
+    }
+    */
+
+
+
+
+
+
     /*
        submit(e) {
             e.preventDefault();
@@ -165,7 +409,7 @@ export default class Schedule extends React.Component {
 
     trainsubmithandler(e) {
         e.preventDefault();
-        console.log("KUCH BHI");
+        console.log("Train Submitting");
         const obj = {
             trainNo: this.state.trainNo,
             station: this.state.station,
@@ -182,14 +426,104 @@ export default class Schedule extends React.Component {
             price: this.state.price,
 
         }
-        console.log(JSON.stringify(obj) + "ITS WORKINGGGG!!");
+        console.log(JSON.stringify(obj) + "Train submission In Progress");
         fetch('http://localhost:4000/api/train/newtrain', {
             method: 'post',
             headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
             body: JSON.stringify(obj)
 
         })
+        alert('Submission Successful!');
+
+        this.setState({ trainNo: '' });
+        this.setState({ station: '' });
+        this.setState({ TrainName: '' });
+        this.setState({ departureDate: '' });
+        this.setState({ arrivalDate: '' });
+        this.setState({ departureTime: '' });
+        this.setState({ arrivalTime: '' });
+        this.setState({ duration: '' });
+        this.setState({ origin: '' });
+        this.setState({ destination: '' });
+        this.setState({ classes: '' });
+        this.setState({ noOfSeats: '' });
+        this.setState({ price: '' });
+
+
+
     }
+
+
+    /*bussubmithandler(e) {
+        e.preventDefault();
+        console.log("Bus Submitting");
+        const obj = {
+
+
+            busNo: this.state.busNo,
+            busStation: this.state.busStation,
+            busName: this.state.busName,
+            busDeparture: this.state.busDeparture,
+            busArrival: this.state.busArrival,
+            departTime: this.state.departTime,
+            arriveTime: this.state.arriveTime,
+            busDuration: this.state.busDuration,
+            busOrigin: this.state.busOrigin,
+            busDestination: this.state.busDestination,
+            busClass: this.state.busClass,
+            busSeats: this.state.busSeats,
+            busPrice: this.state.busPrice,
+
+
+        }
+        console.log(JSON.stringify(obj) + "Bus submission In Progress");
+        fetch('http://localhost:4000/api/bus/newbus', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+    }
+
+
+    flightsubmithandler(e) {
+
+        e.preventDefault();
+        console.log("Flight Submitting");
+        const obj = {
+
+
+            flightNo: this.state.flightNo,
+            airport: this.state.airport,
+            flightName: this.state.flightName,
+            flightDeparture: this.state.flightDeparture,
+            flightArrival: this.state.flightArrival,
+            flightDepartTime: this.state.flightDepartTime,
+            flightArriveTime: this.state.flightArriveTime,
+            flightDuration: this.state.flightDuration,
+            flightOrigin: this.state.flightOrigin,
+            flightDestination: this.state.flightDestination,
+            flightClass: this.state.flightClass,
+            flightSeats: this.state.flightSeats,
+            flightPrice: this.state.flightPrice,
+
+
+
+        }
+        console.log(JSON.stringify(obj) + "Flight submission In Progress");
+        fetch('http://localhost:4000/api/flight/newflight', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+
+
+
+    }*/
+
+
+
 
 
     render() {
@@ -360,7 +694,7 @@ export default class Schedule extends React.Component {
 
 
                                             <MDBBtn color="cyan" type="submit" onClick={this.trainsubmithandler} style={stylecolor}>
-                                                submit
+                                                Submit
                    </MDBBtn>{/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
@@ -392,8 +726,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.trainNo}
-                                                onChange={this.onChangetrainNo}
+                                                value={this.state.flightNo}
+                                                onChange={this.onChangeflightNo}
                                             />
                                             <MDBInput
                                                 label="Airport"
@@ -403,8 +737,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.station}
-                                                onChange={this.onChangestation}
+                                                value={this.state.airport}
+                                                onChange={this.onChangeairport}
                                             />
                                             <MDBInput
                                                 label="Flight Name"
@@ -414,8 +748,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.TrainName}
-                                                onChange={this.onChangeTrainName}
+                                                value={this.state.flightName}
+                                                onChange={this.onChangeflightName}
                                             />
                                             <MDBInput
                                                 label="Departure Date"
@@ -425,8 +759,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.departureDate}
-                                                onChange={this.onChangedepartureDate}
+                                                value={this.state.flightDeparture}
+                                                onChange={this.onChangeflightDeparture}
                                             />
                                             <MDBInput
                                                 label="Arrival Date"
@@ -436,8 +770,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.arrivalDate}
-                                                onChange={this.onChangearrivalDate}
+                                                value={this.state.flightArrival}
+                                                onChange={this.onChangeflightArrival}
                                             />
                                             <MDBInput
                                                 label="Departure Time"
@@ -447,8 +781,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.departureTime}
-                                                onChange={this.onChangedepartureTime}
+                                                value={this.state.flightDepartTime}
+                                                onChange={this.onChangeflightDepartTime}
                                             />
                                             <MDBInput
                                                 label="Arrival Time"
@@ -458,8 +792,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.arrivalTime}
-                                                onChange={this.onChangearrivalTime}
+                                                value={this.state.flightArriveTime}
+                                                onChange={this.onChangeflightArriveTime}
                                             />
                                             <MDBInput
                                                 label="Duration"
@@ -469,8 +803,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.duration}
-                                                onChange={this.onChangeduration}
+                                                value={this.state.flightDuration}
+                                                onChange={this.onChangeflightDuration}
                                             />
                                             <MDBInput
                                                 label="Origin"
@@ -480,8 +814,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.origin}
-                                                onChange={this.onChangeorigin}
+                                                value={this.state.flightOrigin}
+                                                onChange={this.onChangeflightOrigin}
                                             />
                                             <MDBInput
                                                 label="Destination"
@@ -491,8 +825,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.destination}
-                                                onChange={this.onChangedestination}
+                                                value={this.state.flightDestination}
+                                                onChange={this.onChangeflightDestination}
                                             />
                                             <MDBInput
                                                 label="Flight Class"
@@ -502,8 +836,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.classes}
-                                                onChange={this.onChangeclasses}
+                                                value={this.state.flightClass}
+                                                onChange={this.onChangeflightClass}
                                             />
                                             <MDBInput
                                                 label="Seat Number"
@@ -513,8 +847,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.noOfSeats}
-                                                onChange={this.onChangenoOfSeats}
+                                                value={this.state.flightSeats}
+                                                onChange={this.onChangeflightSeats}
                                             />
                                             <MDBInput
                                                 label="Price"
@@ -524,19 +858,21 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.price}
-                                                onChange={this.onChangeprice}
+                                                value={this.state.flightPrice}
+                                                onChange={this.onChangeflightPrice}
                                             />
                                         </div>
 
                                         <div className="text-center py-4 mt-3">
 
 
-                                            {/*                                        <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
-                                                submit
-                </MDBBtn>              */}              {/*<div>  
+                                            <MDBBtn color="cyan" type="submit" onClick={this.flightsubmithandler} style={stylecolor}>
+                                                Submit
+                   </MDBBtn>{/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
+
+
 
                                         </div>
                                     </form>
@@ -564,8 +900,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.trainNo}
-                                                onChange={this.onChangetrainNo}
+                                                value={this.state.busNo}
+                                                onChange={this.onChangebusNo}
                                             />
                                             <MDBInput
                                                 label="Bus stop/station"
@@ -575,8 +911,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.station}
-                                                onChange={this.onChangestation}
+                                                value={this.state.busStation}
+                                                onChange={this.onChangebusStation}
                                             />
                                             <MDBInput
                                                 label="Bus Service Name"
@@ -586,8 +922,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.TrainName}
-                                                onChange={this.onChangeTrainName}
+                                                value={this.state.busName}
+                                                onChange={this.onChangebusName}
                                             />
                                             <MDBInput
                                                 label="Bus Departure Date"
@@ -597,8 +933,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.departureDate}
-                                                onChange={this.onChangedepartureDate}
+                                                value={this.state.busDeparture}
+                                                onChange={this.onChangebusDeparture}
                                             />
                                             <MDBInput
                                                 label="Bus Arrival Date"
@@ -608,8 +944,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.arrivalDate}
-                                                onChange={this.onChangearrivalDate}
+                                                value={this.state.busArrival}
+                                                onChange={this.onChangebusArrival}
                                             />
                                             <MDBInput
                                                 label="Departure Time"
@@ -619,8 +955,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.departureTime}
-                                                onChange={this.onChangedepartureTime}
+                                                value={this.state.departTime}
+                                                onChange={this.onChangedepartTime}
                                             />
                                             <MDBInput
                                                 label="Arrival Time"
@@ -630,8 +966,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.arrivalTime}
-                                                onChange={this.onChangearrivalTime}
+                                                value={this.state.arriveTime}
+                                                onChange={this.onChangearriveTime}
                                             />
                                             <MDBInput
                                                 label="Duration"
@@ -641,8 +977,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.duration}
-                                                onChange={this.onChangeduration}
+                                                value={this.state.busDuration}
+                                                onChange={this.onChangebusDuration}
                                             />
                                             <MDBInput
                                                 label="Origin"
@@ -652,8 +988,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.origin}
-                                                onChange={this.onChangeorigin}
+                                                value={this.state.busOrigin}
+                                                onChange={this.onChangebusOrigin}
                                             />
                                             <MDBInput
                                                 label="Destination"
@@ -663,8 +999,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.destination}
-                                                onChange={this.onChangedestination}
+                                                value={this.state.busDestination}
+                                                onChange={this.onChangebusDestination}
                                             />
                                             <MDBInput
                                                 label="Bus Class"
@@ -674,8 +1010,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.classes}
-                                                onChange={this.onChangeclasses}
+                                                value={this.state.busClass}
+                                                onChange={this.onChangebusClass}
                                             />
                                             <MDBInput
                                                 label="Bus Seats"
@@ -685,8 +1021,8 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.noOfSeats}
-                                                onChange={this.onChangenoOfSeats}
+                                                value={this.state.busSeats}
+                                                onChange={this.onChangebusSeats}
                                             />
                                             <MDBInput
                                                 label="Price"
@@ -696,20 +1032,21 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.price}
-                                                onChange={this.onChangeprice}
+                                                value={this.state.busPrice}
+                                                onChange={this.onChangebusPrice}
                                             />
                                         </div>
 
                                         <div className="text-center py-4 mt-3">
 
 
-                                            {/*                             <MDBBtn color="cyan" type="submit" onClick={this.state.submit} style={stylecolor}>
-                                                submit
-                   </MDBBtn>
-                 */}  {/*<div>  
+                                            <MDBBtn color="cyan" type="submit" onClick={this.bussubmithandler} style={stylecolor}>
+                                                Submit
+                   </MDBBtn>{/*<div>  
                   <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
                   </div> */}
+
+
 
                                         </div>
                                     </form>
