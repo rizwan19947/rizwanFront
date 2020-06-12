@@ -212,10 +212,6 @@ export default class Schedule extends React.Component {
         this.flightsubmithandler = this.flightsubmithandler.bind(this);
 
 
-<<<<<<< HEAD
-=======
-        
->>>>>>> 87b058b9ba26382a3f6aee1a4154f7f322c1b1d0
         this.onChangebusNo = this.onChangebusNo.bind(this);
         this.onChangebusStation = this.onChangebusStation.bind(this);
         this.onChangebusName = this.onChangebusName.bind(this);
@@ -381,11 +377,6 @@ export default class Schedule extends React.Component {
     onChangebusPrice(e) {
         this.setState({ busPrice: e.target.value });
     }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 87b058b9ba26382a3f6aee1a4154f7f322c1b1d0
 
 
 
@@ -470,19 +461,16 @@ export default class Schedule extends React.Component {
             departureDate: this.state.flightDeparture,
             arrivalDate: this.state.flightArrival,
             departureTime: this.state.flightDepartTime,
-<<<<<<< HEAD
             arrivalTime: this.state.flightArriveTime,
-=======
-            ArrivalTime: this.state.flightArriveTime,
->>>>>>> 87b058b9ba26382a3f6aee1a4154f7f322c1b1d0
             duration: this.state.flightDuration,
             origin: this.state.flightOrigin,
             destination: this.state.flightDestination,
             classes: this.state.flightClass,
             noOfSeats: this.state.flightSeats,
             price: this.state.flightPrice,
-<<<<<<< HEAD
 
+
+            
         }
         console.log(JSON.stringify(obj) + "flight submission In Progress");
         fetch('http://localhost:4000/api/flight/newflight', {
@@ -509,36 +497,9 @@ export default class Schedule extends React.Component {
 
 
 
-=======
+    
 
         }
-        console.log(JSON.stringify(obj) + "flight submission In Progress");
-        fetch('http://localhost:4000/api/flight/newflight', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
-            body: JSON.stringify(obj)
-
-        })
-        alert('Submission Successful!');
-
-        this.setState({ flightNo: '' });
-        this.setState({ airport: '' });
-        this.setState({ flightName: '' });
-        this.setState({ flightDeparture: '' });
-        this.setState({ flightArrival: '' });
-        this.setState({ flightDepartTime: '' });
-        this.setState({ flightArriveTime: '' });
-        this.setState({ flightDuration: '' });
-        this.setState({ flightOrigin: '' });
-        this.setState({ flightDestination: '' });
-        this.setState({ flightClass: '' });
-        this.setState({ flightSeats: '' });
-        this.setState({ flightPrice: '' });
-
-
-
->>>>>>> 87b058b9ba26382a3f6aee1a4154f7f322c1b1d0
-    }
 
     bussubmithandler(e) {
         e.preventDefault();
