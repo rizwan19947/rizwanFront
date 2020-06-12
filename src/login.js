@@ -45,12 +45,24 @@ export default class Login extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
-        axios.post('http://localhost:3000/api/user/login', obj).then(res => {
-            this.setState({ redirect: true }); localStorage.setItem('Token', JSON.stringify(res.data));
+        
+        console.log("signing in");
+        fetch('http://localhost:4000/api/user/login', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+        window.location.reload("Booking");
+        
+
+ /*       axios.post('http://localhost:3000/api/user/login', obj).then(res => {
+            this.setState({ redirect: true });
+            localStorage.setItem('Token', JSON.stringify(res.data));
             window.location.reload("Booking");
             alert('Logged in Successfully')
         }).catch(alert('Invalid Email or Password. Enter Correct Credentials'));
-    }
+    */   }
 
     render() {
         if (this.state.redirect) {
