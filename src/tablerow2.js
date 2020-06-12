@@ -3,11 +3,27 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class TableRow2 extends Component {
-   
+
     componentDidMount() {
         fetch('http://localhost:4000/api/bus/getbus')
             .then((res) => res.json())
     }
+
+
+    delete(busid) {
+        const obj = {
+            busid: busid
+        };
+        console.log("deleting BUS!!!!!!!!!!!!!!!!!");
+        fetch('http://localhost:4000/api/bus/deletebus', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+        }
+        )
+    };
+
+
     render() {
         return (
             <tr>
@@ -37,12 +53,14 @@ class TableRow2 extends Component {
                 </td>
                 <td>
                     <button className="btn btn-primary">Edit</button>
-                </td> 
+                </td>
                 <td>
-                    <button className="btn btn-danger"  >Delete</button>
+                    <button className="btn btn-danger" onClick={
+                        ()=>this.delete(this.props.obj.busid)
+                    } >Delete</button>
                 </td>
             </tr>
-    );
+        );
     }
 }
 

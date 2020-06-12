@@ -11,6 +11,7 @@ class TableRow1 extends Component {
     const obj = {
       trainid: trainid
     };
+    console.log("TRAIN DELETE!!!!")
     fetch('http://localhost:4000/api/train/deletetrain', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
