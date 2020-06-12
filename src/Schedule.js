@@ -101,8 +101,8 @@ export default class Schedule extends React.Component {
             busName: '',
             busDeparture: '',
             busArrival: '',
-            departTime: '',
-            arriveTime: '',
+            busDepartTime: '',
+            busArriveTime: '',
             busDuration: '',
             busOrigin: '',
             busDestination: '',
@@ -196,7 +196,7 @@ export default class Schedule extends React.Component {
         this.trainsubmithandler = this.trainsubmithandler.bind(this);
 
         //FLIGHT
-        /*this.onChangeflightNo = this.onChangeflightNo.bind(this);
+        this.onChangeflightNo = this.onChangeflightNo.bind(this);
         this.onChangeairport = this.onChangeairport.bind(this);
         this.onChangeflightName = this.onChangeflightName.bind(this);
         this.onChangeflightDeparture = this.onChangeflightDeparture.bind(this);
@@ -209,9 +209,10 @@ export default class Schedule extends React.Component {
         this.onChangeflightClass = this.onChangeflightClass.bind(this);
         this.onChangeflightSeats = this.onChangeflightSeats.bind(this);
         this.onChangeflightPrice = this.onChangeflightPrice.bind(this);
+        this.flightsubmithandler = this.flightsubmithandler.bind(this);
 
 
-        //BUS
+        
         this.onChangebusNo = this.onChangebusNo.bind(this);
         this.onChangebusStation = this.onChangebusStation.bind(this);
         this.onChangebusName = this.onChangebusName.bind(this);
@@ -224,8 +225,8 @@ export default class Schedule extends React.Component {
         this.onChangebusDestination = this.onChangebusDestination.bind(this);
         this.onChangebusClass = this.onChangebusClass.bind(this);
         this.onChangebusSeats = this.onChangebusSeats.bind(this);
-        this.onChangebusPrice = this.onChangebusPrice.bind(this);*/
-
+        this.onChangebusPrice = this.onChangebusPrice.bind(this);
+        this.bussubmithandler = this.bussubmithandler.bind(this);
 
 
 
@@ -285,7 +286,7 @@ export default class Schedule extends React.Component {
 
 
 
-    /*onChangeflightNo(e) {
+    onChangeflightNo(e) {
 
         this.setState({ flightNo: e.target.value });
     }
@@ -352,10 +353,10 @@ export default class Schedule extends React.Component {
     }
 
     onChangedepartTime(e) {
-        this.setState({ departTime: e.target.value });
+        this.setState({ busDepartTime: e.target.value });
     }
     onChangearriveTime(e) {
-        this.setState({ arriveTime: e.target.value });
+        this.setState({ busArriveTime: e.target.value });
     }
     onChangebusDuration(e) {
         this.setState({ busDuration: e.target.value });
@@ -377,7 +378,7 @@ export default class Schedule extends React.Component {
     onChangebusPrice(e) {
         this.setState({ busPrice: e.target.value });
     }
-    */
+    
 
 
 
@@ -452,7 +453,97 @@ export default class Schedule extends React.Component {
 
 
     }
+    flightsubmithandler(e) {
+        e.preventDefault();
+        console.log("FLight Submitting");
+        const obj = {
+            flightNo: this.state.flightNo,
+            AirportId: this.state.airport,
+            Airline: this.state.flightName,
+            departureDate: this.state.flightDeparture,
+            arrivalDate: this.state.flightArrival,
+            departureTime: this.state.flightDepartTime,
+            ArrivalTime: this.state.flightArriveTime,
+            duration: this.state.flightDuration,
+            origin: this.state.flightOrigin,
+            destination: this.state.flightDestination,
+            classes: this.state.flightClass,
+            noOfSeats: this.state.flightSeats,
+            price: this.state.flightPrice,
 
+        }
+        console.log(JSON.stringify(obj) + "flight submission In Progress");
+        fetch('http://localhost:4000/api/flight/newflight', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+        alert('Submission Successful!');
+
+        this.setState({ flightNo: '' });
+        this.setState({ airport: '' });
+        this.setState({ flightName: '' });
+        this.setState({ flightDeparture: '' });
+        this.setState({ flightArrival: '' });
+        this.setState({ flightDepartTime: '' });
+        this.setState({ flightArriveTime: '' });
+        this.setState({ flightDuration: '' });
+        this.setState({ flightOrigin: '' });
+        this.setState({ flightDestination: '' });
+        this.setState({ flightClass: '' });
+        this.setState({ flightSeats: '' });
+        this.setState({ flightPrice: '' });
+
+
+
+    }
+
+    bussubmithandler(e) {
+        e.preventDefault();
+        console.log("bus Submitting");
+        const obj = {
+            busNo: this.state.busNo,
+            station: this.state.busStation,
+            BusName: this.state.busName,
+            departureDate: this.state.busDeparture,
+            arrivalDate: this.state.busArrival,
+            departureTime: this.state.busDepartTime,
+            arrivalTime: this.state.busArriveTime,
+            duration: this.state.busDuration,
+            origin: this.state.busOrigin,
+            destination: this.state.busDestination,
+            classes: this.state.busClass,
+            noOfSeats: this.state.busSeats,
+            price: this.state.busPrice,
+
+        }
+        console.log(JSON.stringify(obj) + "Bus submission In Progress");
+        fetch('http://localhost:4000/api/bus/newbus', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+        alert('Submission Successful!');
+
+        this.setState({ busNo: '' });
+        this.setState({ busStation: '' });
+        this.setState({ busName: '' });
+        this.setState({ busDeparture: '' });
+        this.setState({ busArrival: '' });
+        this.setState({ busDepartTime: '' });
+        this.setState({ busArriveTime: '' });
+        this.setState({ busDuration: '' });
+        this.setState({ busOrigin: '' });
+        this.setState({ busDestination: '' });
+        this.setState({ busClass: '' });
+        this.setState({ busSeats: '' });
+        this.setState({ busPrice: '' });
+
+
+
+    }
 
     /*bussubmithandler(e) {
         e.preventDefault();
@@ -955,7 +1046,7 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.departTime}
+                                                value={this.state.busDepartTime}
                                                 onChange={this.onChangedepartTime}
                                             />
                                             <MDBInput
@@ -966,7 +1057,7 @@ export default class Schedule extends React.Component {
                                                 validate
                                                 error="wrong"
                                                 success="right"
-                                                value={this.state.arriveTime}
+                                                value={this.state.busArriveTime}
                                                 onChange={this.onChangearriveTime}
                                             />
                                             <MDBInput
