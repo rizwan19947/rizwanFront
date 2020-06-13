@@ -1,6 +1,6 @@
 import React from "react";
 import image1 from "./plane.jpg";
-import image2 from "./road.jpg";
+import image2 from "./road.jpg"; 
 import image3 from "./balloon.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";

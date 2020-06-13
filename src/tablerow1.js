@@ -48,9 +48,9 @@ class TableRow1 extends Component {
         <td>
           {this.props.obj.price}
         </td>
-        <td>
-          <button className="btn btn-primary">Edit</button>
-        </td>
+            {/*<td>
+                <button className="btn btn-primary">Edit</button>
+            </td>*/}
         <td>
           <button className="btn btn-danger" onClick={() =>
             this.delete(this.props.obj.trainid)

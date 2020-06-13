@@ -47,6 +47,20 @@ const style2 = {
 }
 
 
+const style3 = {
+    height: '500px',
+    width: '300px',
+    // padding: '20px',
+    margin: '1px',
+    float: 'right',
+    // background: '#5BDAFF',
+
+
+
+}
+
+
+
 
 const stylecolor = {
 
@@ -109,7 +123,7 @@ export default class Schedule extends React.Component {
             busClass: '',
             busSeats: '',
             busPrice: '',
-            redirerct: false
+            redirect: false
 
 
 
@@ -626,10 +640,17 @@ export default class Schedule extends React.Component {
             return <Redirect to={'Bookings'} />;
         }
         return (
+
+
+
+
             <div >
 
 
+
                 <Navbar />
+                
+
                 <MDBContainer style={style}>
                     <MDBRow>
                         <MDBCol>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import Navbar from "./navbar";
 import { Component } from 'react';
 import axios from 'axios';
@@ -10,6 +11,37 @@ import "./Home.css";
 import {Link} from "react-router-dom";
 //import { Link } from "@material-ui/core";
 
+
+const style3 = {
+  height: 'auto',
+  width: '400px',
+  padding: '1px'  ,
+  // margin: 'auto',
+
+  
+  // float: 'centre',
+  // background: '#5BDAFF',
+
+
+
+}
+
+const style4 = {
+
+  
+
+};
+
+
+
+const stylecolor = {
+
+  background: '#BDFD9E',
+
+};
+
+
+
 class Bookings extends React.Component {
 
     
@@ -18,11 +50,50 @@ class Bookings extends React.Component {
 
  constructor(props) {
       super(props);
+<<<<<<< HEAD
       this.state = {flights: [], trains: [], bus: []};
      
       
+=======
+      this.state = {
+        flights: [],
+        trains: [],
+        bus: [],
+        searchOrigin: '',
+        searchDestination: '',
+        redirect: false
+      };
+      this.onChangeSearchOrigin = this.onChangeSearchOrigin.bind(this);
+      this.onChangeSearchDestination = this.onChangeSearchDestination.bind(this);
+      this.searchsubmithandler = this.searchsubmithandler.bind(this);
     }
-    
+
+    onChangeSearchOrigin(e) {
+      this.setState({ searchOrigin: e.target.value });
+  }
+  onChangeSearchDestination(e) {
+      this.setState({ searchDestination: e.target.value });
+  }
+
+
+  searchsubmithandler(e) {
+    e.preventDefault();
+    console.log("Search Submitting");
+    const obj = {
+        searchOrigin: this.state.searchOrigin,
+        searchDestination: this.state.searchDestination,
+>>>>>>> 8bd2b1d6e4a6d9e6a197186591331208f0c49ed1
+    }
+    //YAHA API ADD KAR !!!!!
+
+    // console.log(JSON.stringify(obj) + "Search submission In Progress");
+    //     fetch('http://localhost:4000/api/train/newtrain', {
+    //         method: 'post',
+    //         headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
+    //         body: JSON.stringify(obj)
+
+    //     })
+      }
     //DISPLAYING THE STORED DATA IN THE CLOUD DATABASE 
 
     componentDidMount(){
@@ -83,12 +154,74 @@ class Bookings extends React.Component {
 
       return (
           <>
-              <div style={style1}>
+          <div style={style1}>
               <Navbar />
+<<<<<<< HEAD
 
       
 
 
+=======
+          
+
+          <div>
+          
+                <MDBContainer style={style3}>
+                    <MDBRow>
+                        <MDBCol>
+                            <MDBCard>
+                                <MDBCardBody>
+                                    <form onSubmit={this.submit}>
+                                        <p className="h4 text-center py-4">Search</p>
+                                        <div style={style4}>
+                                            <MDBInput 
+                                                label="search origin"
+                                                icon="user"
+                                                group
+                                                type="text"
+                                                validate
+                                                error="wrong"
+                                                success="right"
+                                                value={this.state.searchOrigin}
+                                                onChange={this.onChangeSearchOrigin}
+                                            />
+                                            <MDBInput
+                                                label="search destination"
+                                                icon="user"
+                                                group
+                                                type="text"
+                                                validate
+                                                error="wrong"
+                                                success="right"
+                                                value={this.state.searchDestination}
+                                                onChange={this.onChangeSearchDestination}
+                                            />
+                                            
+                                        </div>
+
+                                        <div className="text-center py-4 mt-3">
+
+
+                                            <MDBBtn color="cyan" type="submit" onClick={this.searchsubmithandler} style={stylecolor}>
+                                                Submit
+                   </MDBBtn>{/*<div>  
+                  <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
+                  </div> */}
+
+
+
+                                        </div>
+                                    </form>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
+
+
+          </div>
+              
+>>>>>>> 8bd2b1d6e4a6d9e6a197186591331208f0c49ed1
         <div>
           <h3 align="center">Flights Available</h3>
           <table className="table table-striped" style={{ marginTop: 20 }}>
