@@ -110,6 +110,8 @@ export default class Login extends React.Component {
                                             color="light-blue"
                                             className="mb-3"
                                             type="submit"
+                                            onClick={() =>
+                                                this.submit(this.state)}
                                         >
                                             Login
                 </MDBBtn>
