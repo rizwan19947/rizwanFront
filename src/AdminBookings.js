@@ -4,9 +4,9 @@ import "./App.css";
 import Navbar from "./navbar";
 import { Component } from 'react';
 import axios from 'axios';
-import TableRow from './tablerow';
-import TableRow1 from './tablerow1';
-import TableRow2 from './tablerow2';
+import TableRow from './tablerow00';
+import TableRow1 from './tablerow11';
+import TableRow2 from './tablerow22';
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
@@ -18,7 +18,6 @@ import Cookies from 'universal-cookie';
 
 class Bookings extends React.Component {
 
-    isTrue = false; 
 
 
 
@@ -47,11 +46,6 @@ class Bookings extends React.Component {
           console.log(error);
         })
 
-        if (global.localStorage.getItem('adminAccess') != null) {
-
-            this.isTrue = true; 
-
-        }
 
     }
 
@@ -79,7 +73,6 @@ class Bookings extends React.Component {
 
         };
 
-        if (this.isTrue == true) {
 
             return (
                 <>
@@ -155,88 +148,14 @@ class Bookings extends React.Component {
                     </div>
                 </>
             );
-        }
-        else {
-
-
-            return (
-                <>
-                    <div style={style1}>
-                        <Navbar />
-                        <div>
-                            <h3 align="center">Flights Available</h3>
-                            <table className="table table-striped" style={{ marginTop: 20 }}>
-                                <thead>
-                                    <tr>
-                                        <th>Flight No</th>
-                                        <th>Airline</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Origin</th>
-                                        <th>Destination</th>
-                                        <th>Price</th>
-                                        <th colSpan="2">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.tabRow()}
-                                </tbody>
-                            </table>
-
-                            
-                        </div>
-                        <div>
-                            <h3 align="center">Trains Available</h3>
-                            <table className="table table-striped" style={{ marginTop: 20 }}>
-                                <thead>
-                                    <tr>
-                                        <th>Train No</th>
-                                        <th>Station</th>
-                                        <th>Train Name</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Origin</th>
-                                        <th>Destination</th>
-                                        <th>Price</th>
-                                        <th colSpan="2">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.tabrow1()}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div>
-                            <h3 align="center">Bus Available</h3>
-                            <table className="table table-striped" style={{ marginTop: 20 }}>
-                                <thead>
-                                    <tr>
-                                        <th>Bus No</th>
-                                        <th>Station</th>
-                                        <th>Bus Name</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Origin</th>
-                                        <th>Destination</th>
-                                        <th>Price</th>
-                                        <th colSpan="2">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {this.tabrow2()}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </>
-            );
+        
+        
 
 
         }
     }
 
-  }
+  
      
 
 export default Bookings;

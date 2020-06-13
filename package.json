@@ -9,6 +9,7 @@
     "base64-img": "^1.0.4",
     "bootstrap": "^4.4.1",
     "cookie-session": "^1.4.0",
+    "local-storage": "^2.0.0",
     "material-ui": "^0.20.2",
     "material-ui-avatar-picker": "^1.0.4",
     "mdbreact": "^4.23.0",

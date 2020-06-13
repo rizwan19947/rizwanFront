@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from "react";
 import Base64 from '../node_modules/base64-img';
 import axios from 'axios';
 
-class TableRow extends Component {
+class TableRow extends React.Component {
 
   /*  delete(e){
        var id = e.target.value;
@@ -10,7 +10,7 @@ class TableRow extends Component {
        
    }
   */
-
+    isTrue = false; 
 
   delete(flightid) {
     const obj = {
@@ -43,43 +43,85 @@ class TableRow extends Component {
           img: base64Flag + imageStr
         })
       })
-  }
-  render() {
-    return (
-      <tr>
-        <td>
-          {this.props.obj.flightNo}
-        </td>
 
-        <td>
-          {this.props.obj.Airline}
-        </td>
-        <td>
-          {this.props.obj.departureDate}
-        </td>
-        <td>
-          {this.props.obj.arrivalDate}
-        </td>
-        <td>
-          {this.props.obj.origin}
-        </td>
-        <td>
-          {this.props.obj.destination}
-        </td>
-        <td>
-          {this.props.obj.price}
-        </td>
-            {/*<td>
+      if (localStorage.getItem('adminAccess') != null) {
+          this.isTrue = true;
+      }
+
+  }
+    render() {
+
+        if (this.isTrue == true) {
+            return (
+                <tr>
+                    <td>
+                        {this.props.obj.flightNo}
+                    </td>
+
+                    <td>
+                        {this.props.obj.Airline}
+                    </td>
+                    <td>
+                        {this.props.obj.departureDate}
+                    </td>
+                    <td>
+                        {this.props.obj.arrivalDate}
+                    </td>
+                    <td>
+                        {this.props.obj.origin}
+                    </td>
+                    <td>
+                        {this.props.obj.destination}
+                    </td>
+                    <td>
+                        {this.props.obj.price}
+                    </td>
+                    {/*<td>
                 <button className="btn btn-primary">Edit</button>
             </td>*/}
-        <td>
-          <button className="btn btn-danger" onClick={() =>
-            this.delete(this.props.obj.flightid)
-          }
-          >Delete</button>
-        </td>
-      </tr>
-    );
+                    <td>
+                        <button className="btn btn-danger" onClick={() =>
+                            this.delete(this.props.obj.flightid)
+                        }
+                        >Delete</button>
+                    </td>
+                </tr>
+            );
+        }
+        else {
+            return (
+                <tr>
+                    <td>
+                        {this.props.obj.flightNo}
+                    </td>
+
+                    <td>
+                        {this.props.obj.Airline}
+                    </td>
+                    <td>
+                        {this.props.obj.departureDate}
+                    </td>
+                    <td>
+                        {this.props.obj.arrivalDate}
+                    </td>
+                    <td>
+                        {this.props.obj.origin}
+                    </td>
+                    <td>
+                        {this.props.obj.destination}
+                    </td>
+                    <td>
+                        {this.props.obj.price}
+                    </td>
+                    {/*<td>
+                <button className="btn btn-primary">Edit</button>
+            </td>*/}
+                    <td>
+                        
+                    </td>
+                </tr>
+            );
+        }
   }
 }
 

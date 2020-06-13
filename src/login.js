@@ -20,6 +20,8 @@ import { Link } from "react-router-dom";
 //const Cookie = new Cookies();
 
 export default class Login extends React.Component {
+    isTrue = false; 
+
     constructor(props) {
         super(props);
         this.state = {
@@ -51,9 +53,12 @@ export default class Login extends React.Component {
             method: 'post',
             headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
             body: JSON.stringify(obj)
-
+            
         })
-        window.location.reload("Booking");
+        global.localStorage.setItem('adminAccess', 'true');
+
+        
+        window.location.reload();
         
 
  /*       axios.post('http://localhost:3000/api/user/login', obj).then(res => {
@@ -64,71 +69,88 @@ export default class Login extends React.Component {
         }).catch(alert('Invalid Email or Password. Enter Correct Credentials'));
     */   }
 
+
+
     render() {
-        if (this.state.redirect) {
-            return <Redirect to={'home'} />;
+
+        if (global.localStorage.getItem('adminAccess') != null) {
+            this.isTrue = true; 
         }
-        return (<>
-            <Navbar />
 
-            <MDBContainer>
-                <MDBRow>
-                    <MDBCol md="6">
-                        <MDBCard>
-                            <MDBCardBody>
-                                <MDBCardHeader className="form-header deep-blue-gradient rounded">
-                                    <h3 className="my-3">
-                                        <MDBIcon icon="lock" /> Login:
+
+
+        if (this.isTrue == true) {
+            return <Redirect to={'Bookings'} />;
+        }
+
+        else {
+
+            return (<>
+                <Navbar />
+
+                <MDBContainer>
+                    <MDBRow>
+                        <MDBCol md="6">
+                            <MDBCard>
+                                <MDBCardBody>
+                                    <MDBCardHeader className="form-header deep-blue-gradient rounded">
+                                        <h3 className="my-3">
+                                            <MDBIcon icon="lock" /> Login:
                 </h3>
-                                </MDBCardHeader>
-                                <form onSubmit={this.submit} >
-                                    <div className="grey-text">
-                                        <MDBInput
-                                            label="Type your email"
-                                            icon="envelope"
-                                            group
-                                            type="email"
-                                            validate
-                                            error="wrong"
-                                            success="right"
-                                            value={this.state.email}
-                                            onChange={this.onChangeEmail}
-                                        />
-                                        <MDBInput
-                                            label="Type your password"
-                                            icon="lock"
-                                            group
-                                            type="password"
-                                            value={this.state.password}
-                                            onChange={this.onChangePassword}
-                                            validate
-                                        />
-                                    </div>
+                                    </MDBCardHeader>
+                                    <form onSubmit={this.submit} >
+                                        <div className="grey-text">
+                                            <MDBInput
+                                                label="Type your email"
+                                                icon="envelope"
+                                                group
+                                                type="email"
+                                                validate
+                                                error="wrong"
+                                                success="right"
+                                                value={this.state.email}
+                                                onChange={this.onChangeEmail}
+                                            />
+                                            <MDBInput
+                                                label="Type your password"
+                                                icon="lock"
+                                                group
+                                                type="password"
+                                                value={this.state.password}
+                                                onChange={this.onChangePassword}
+                                                validate
+                                            />
+                                        </div>
 
-                                    <div className="text-center mt-4">
-                                        <MDBBtn
-                                            color="light-blue"
-                                            className="mb-3"
-                                            type="submit"
-                                            onClick={() =>
-                                                this.submit(this.state)}
-                                        >
-                                            Login
+                                        <div className="text-center mt-4">
+                                            <MDBBtn
+                                                color="light-blue"
+                                                className="mb-3"
+                                                type="submit"
+                                                onClick={() =>
+                                                    this.submit(this.state)}
+                                            >
+                                                Login
                 </MDBBtn>
-                                    </div>
-                                </form>
-                                <MDBModalFooter>
-                                    <div className="font-weight-light">
-                                        <a href="Comparision" style={{ color: "black" }}>Not a member? Sign Up</a>
-                                        {/* <p>Forgot Password?</p> */}
-                                    </div>
-                                </MDBModalFooter>
-                            </MDBCardBody>
-                        </MDBCard>
-                    </MDBCol>
-                </MDBRow>
-            </MDBContainer>    </>
-        );
+                                        </div>
+                                    </form>
+                                    <MDBModalFooter>
+                                        <div className="font-weight-light">
+                                            <a href="Comparision" style={{ color: "black" }}>Not a member? Sign Up</a>
+                                            {/* <p>Forgot Password?</p> */}
+                                        </div>
+                                    </MDBModalFooter>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>    </>
+            );
+
+
+        }
+
+
     };
 }
 
