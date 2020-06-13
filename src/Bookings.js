@@ -19,7 +19,8 @@ class Bookings extends React.Component {
  constructor(props) {
       super(props);
       this.state = {flights: [], trains: [], bus: []};
-
+     
+      
     }
     
     //DISPLAYING THE STORED DATA IN THE CLOUD DATABASE 
@@ -57,6 +58,18 @@ class Bookings extends React.Component {
             return <TableRow2 obj={object} key={i} />;
         });
     }
+
+
+
+/*    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+  
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+*/  
+
     render() {
 
 
@@ -72,6 +85,10 @@ class Bookings extends React.Component {
           <>
               <div style={style1}>
               <Navbar />
+
+      
+
+
         <div>
           <h3 align="center">Flights Available</h3>
           <table className="table table-striped" style={{ marginTop: 20 }}>
