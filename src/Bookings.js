@@ -15,8 +15,7 @@ import Cookies from 'universal-cookie';
 //import { Link } from "@material-ui/core";
 
 
-<<<<<<< HEAD
-=======
+
 const style3 = {
   height: 'auto',
   width: '400px',
@@ -45,7 +44,6 @@ const stylecolor = {
 
 };
 
->>>>>>> 8bd2b1d6e4a6d9e6a197186591331208f0c49ed1
 
 
 class Bookings extends React.Component {
@@ -56,10 +54,8 @@ class Bookings extends React.Component {
 
  constructor(props) {
       super(props);
-<<<<<<< HEAD
       this.state = {flights: [], trains: [], bus: []};
      
-=======
       this.state = {
         flights: [],
         trains: [],
@@ -87,7 +83,6 @@ class Bookings extends React.Component {
     const obj = {
         searchOrigin: this.state.searchOrigin,
         searchDestination: this.state.searchDestination,
->>>>>>> 8bd2b1d6e4a6d9e6a197186591331208f0c49ed1
     }
     //YAHA API ADD KAR !!!!!
 
@@ -150,7 +145,6 @@ class Bookings extends React.Component {
 
         };
 
-<<<<<<< HEAD
         if (this.isTrue == true) {
 
             return (
@@ -306,7 +300,6 @@ class Bookings extends React.Component {
 
 
         }
-=======
 
 
       return (
@@ -441,7 +434,6 @@ class Bookings extends React.Component {
     </div>
                   </>
       );
->>>>>>> 8bd2b1d6e4a6d9e6a197186591331208f0c49ed1
     }
 
   }
