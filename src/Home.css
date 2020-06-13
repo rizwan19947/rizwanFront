@@ -4,6 +4,12 @@ nav {
   padding-left: 1%;
   justify-content: space-between;
 }
+img {
+  display: inline-block;
+  margin-left: 1%;
+  margin-top: 1%;
+  width: 10%;  
+}
 .a{
   color: black;
   margin:2%; 
@@ -15,19 +21,19 @@ nav1 ul1 {
   list-style: none;
 }
 
-nav ul li {
+/* nav ul li {
   display: inline-block;
-  margin: 5%;
+  margin: 2%;
 }
 nav ul li a {
   text-decoration: none;
   color: black;
-}
+} */
 
 nav1 ul1 li {
   display: inline-block;
   margin-left: 13%;
-  margin-top: 2%;
+  margin-top: 0%;
 }
 
 nav1 ul1 li a {
