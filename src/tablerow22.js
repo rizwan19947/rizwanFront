@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from "react";
 //import Base64 from '../node_modules/base64-img';
 import axios from 'axios';
 
-class TableRow2 extends Component {
+class TableRow22 extends React.Component {
 
     componentDidMount() {
         fetch('http://localhost:4000/api/bus/getbus')
@@ -51,9 +51,7 @@ class TableRow2 extends Component {
                 <td>
                     {this.props.obj.price}
                 </td>
-                <td>
-                    <button className="btn btn-primary">Edit</button>
-                </td>
+                
                 <td>
                     <button className="btn btn-danger" onClick={
                         () => this.delete(this.props.obj.busid)
@@ -64,4 +62,4 @@ class TableRow2 extends Component {
     }
 }
 
-export default TableRow2;
+export default TableRow22;

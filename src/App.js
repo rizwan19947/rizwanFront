@@ -9,7 +9,7 @@ import Aboutus from './Aboutus';
 import Login from './login';
 import addflights from './addflights';
 import Comparision from './Comparision';
-import AdminBookings1 from './AdminBookings';
+import AdminBookings from './AdminBookings';
 
 import { Switch, Route, Link } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ var obj = global.localStorage;
 
 function App() {
 
+    
 
     if (obj.getItem('adminAccess') != null) {
 
@@ -30,7 +31,7 @@ function App() {
                     <Route path="/Schedule" component={Schedule} />
                     <Route path="/Bookings" component={Bookings} />
                     <Route path="/Services" component={Services} />
-                    <Route path="/AdminBookings" component={AdminBookings1}/>
+                    <Route path="/AdminBookings" component={AdminBookings}/>
                     <Route path="/Comparision" component={Comparision} />
                     <Route path="/Comparision1" component={Comparision1} />
                     <Route path="/Aboutus" component={Aboutus} />

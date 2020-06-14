@@ -4,9 +4,9 @@ import "./App.css";
 import Navbar from "./navbar";
 import { Component } from 'react';
 import axios from 'axios';
-import TableRow from './tablerow00';
-import TableRow1 from './tablerow11';
-import TableRow2 from './tablerow22';
+import TableRow00 from './tablerow00';
+import TableRow11 from './tablerow11';
+import TableRow22 from './tablerow22';
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
@@ -16,7 +16,7 @@ import Cookies from 'universal-cookie';
 
 
 
-class Bookings extends React.Component {
+class AdminBookings extends React.Component {
 
 
 
@@ -51,17 +51,17 @@ class Bookings extends React.Component {
 
     tabRow(){
       return this.state.flights.map(function(object, i){
-          return <TableRow  obj={object} key={i} />;
+          return <TableRow00  obj={object} key={i} />;
       });
     }
     tabrow1(){
       return this.state.trains.map(function(object, i){
-          return <TableRow1 obj={object} key={i} />;
+          return <TableRow11 obj={object} key={i} />;
       });
     }
       tabrow2(){
         return this.state.bus.map(function(object, i){
-            return <TableRow2 obj={object} key={i} />;
+            return <TableRow22 obj={object} key={i} />;
         });
     }
     render() {
@@ -76,7 +76,11 @@ class Bookings extends React.Component {
 
             return (
                 <>
+
                     <div style={style1}>
+
+
+
                         <Navbar />
                         <div>
                             <h3 align="center">Flights Available</h3>
@@ -158,4 +162,4 @@ class Bookings extends React.Component {
   
      
 
-export default Bookings;
+export default AdminBookings;

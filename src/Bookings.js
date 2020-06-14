@@ -151,6 +151,63 @@ class Bookings extends React.Component {
                 <>
                     <div style={style1}>
                         <Navbar />
+
+
+                        <MDBContainer style={style3}>
+                            <MDBRow>
+                                <MDBCol>
+                                    <MDBCard>
+                                        <MDBCardBody>
+                                            <form onSubmit={this.submit}>
+                                                <p className="h4 text-center py-4">Search</p>
+                                                <div style={style4}>
+                                                    <MDBInput
+                                                        label="search origin"
+                                                        icon="user"
+                                                        group
+                                                        type="text"
+                                                        validate
+                                                        error="wrong"
+                                                        success="right"
+                                                        value={this.state.searchOrigin}
+                                                        onChange={this.onChangeSearchOrigin}
+                                                    />
+                                                    <MDBInput
+                                                        label="search destination"
+                                                        icon="user"
+                                                        group
+                                                        type="text"
+                                                        validate
+                                                        error="wrong"
+                                                        success="right"
+                                                        value={this.state.searchDestination}
+                                                        onChange={this.onChangeSearchDestination}
+                                                    />
+
+                                                </div>
+
+                                                <div className="text-center py-4 mt-3">
+
+
+                                                    <MDBBtn color="cyan" type="submit" onClick={this.searchsubmithandler} style={stylecolor}>
+                                                        Submit
+                   </MDBBtn>{/*<div>  
+                  <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
+                  </div> */}
+
+
+
+                                                </div>
+                                            </form>
+                                        </MDBCardBody>
+                                    </MDBCard>
+                                </MDBCol>
+                            </MDBRow>
+                        </MDBContainer>
+
+
+
+
                         <div>
                             <h3 align="center">Flights Available</h3>
                             <table className="table table-striped" style={{ marginTop: 20 }}>
@@ -310,57 +367,7 @@ class Bookings extends React.Component {
 
           <div>
           
-                <MDBContainer style={style3}>
-                    <MDBRow>
-                        <MDBCol>
-                            <MDBCard>
-                                <MDBCardBody>
-                                    <form onSubmit={this.submit}>
-                                        <p className="h4 text-center py-4">Search</p>
-                                        <div style={style4}>
-                                            <MDBInput 
-                                                label="search origin"
-                                                icon="user"
-                                                group
-                                                type="text"
-                                                validate
-                                                error="wrong"
-                                                success="right"
-                                                value={this.state.searchOrigin}
-                                                onChange={this.onChangeSearchOrigin}
-                                            />
-                                            <MDBInput
-                                                label="search destination"
-                                                icon="user"
-                                                group
-                                                type="text"
-                                                validate
-                                                error="wrong"
-                                                success="right"
-                                                value={this.state.searchDestination}
-                                                onChange={this.onChangeSearchDestination}
-                                            />
-                                            
-                                        </div>
-
-                                        <div className="text-center py-4 mt-3">
-
-
-                                            <MDBBtn color="cyan" type="submit" onClick={this.searchsubmithandler} style={stylecolor}>
-                                                Submit
-                   </MDBBtn>{/*<div>  
-                  <a href="Login" style={{color: "black"}}>Already a member? Sign In</a>
-                  </div> */}
-
-
-
-                                        </div>
-                                    </form>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>
+                
 
 
           </div>
@@ -430,9 +437,50 @@ class Bookings extends React.Component {
               { this.tabrow2() }
             </tbody>
           </table>
-        </div>
-    </div>
-                  </>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+          </>
+
+
+         
+
+
+
+
+
       );
     }
 
