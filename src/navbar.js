@@ -61,7 +61,7 @@ export default class Login extends React.Component{
                             <li>
                                 <a href="Services"> Services</a>
                             </li>
-
+                            
 
                             <li>
                                 <a href="Aboutus"> About Us</a>
@@ -103,7 +103,7 @@ export default class Login extends React.Component{
                             </li>
 
                             <li>
-                                <a href="Admin-exclusive Bookings"> AdminBookings</a>
+                                <a href="AdminBookings"> Admin-Access Schedule</a>
                             </li>
 
                             <li>

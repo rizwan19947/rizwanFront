@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 
 export default class Login extends React.Component {
     isTrue = false; 
-
+    result = 0;
     constructor(props) {
         super(props);
         this.state = {
@@ -49,16 +49,25 @@ export default class Login extends React.Component {
         }
         
         console.log("signing in");
-        fetch('http://localhost:4000/api/user/login', {
+        this.result = fetch('http://localhost:4000/api/user/login', {
             method: 'post',
             headers: { 'Content-Type': 'application/json', 'accept': "application/json" },
             body: JSON.stringify(obj)
-            
-        })
-        global.localStorage.setItem('adminAccess', 'true');
+
+        });
+
+        if (this.result = "Accepted") {
+            alert('Login Successful!');
+            global.localStorage.setItem('adminAccess', 'true');
+            window.location.reload();
+        }
+        else {
+            alert('Login Unsuccessful!');
+            window.location.reload();
+        }
 
         
-        window.location.reload();
+
         
 
  /*       axios.post('http://localhost:3000/api/user/login', obj).then(res => {

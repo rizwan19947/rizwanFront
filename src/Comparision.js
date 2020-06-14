@@ -11,7 +11,6 @@ const Cookie = new Cookies();
 
 
 
-
 export default class Comparision extends React.Component {
 
   constructor(props) {

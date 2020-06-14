@@ -53,7 +53,6 @@ function App() {
                     <Route path="/home" component={Home} />
                     <Route path="/Bookings" component={Bookings} />
                     <Route path="/Services" component={Services} />
-                    
                     <Route path="/Aboutus" component={Aboutus} />
                     <Link to="/login" component={Login} />
                     <Link to="/addflights" component={addflights} />

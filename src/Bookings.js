@@ -51,6 +51,8 @@ class Bookings extends React.Component {
     isTrue = false; 
 
 
+    
+
 
  constructor(props) {
       super(props);
